@@ -1,11 +1,14 @@
 # Utiliser le Dashboard
 L'installation du dashboard est faite a partir du playbook ansible.  
 [voir] (https://github.com/system-dev-formations/install-k8s-lunanode.git)  
-Vous devez avoir l' alias k et la completion des commandes pour retrouver le port d'ecoute 
-du dashboard dans votre cluster Kubernetes. 
+c'est plus facile d'avoir l'alias k et la completion des commandes pour retrouver le port d'ecoute 
+du dashboard de votre cluster Kubernetes. 
+
+```k get svc -A```
+
 
 ## Obtenir le token de connexion 
-```
+```jsunicoderegexp
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret |
     grep admin-user | awk '{print $1}' )
 ```
